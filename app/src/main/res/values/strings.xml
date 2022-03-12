@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">learning</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="profile">Профиль</string>
+    <string name="navigation">Навигация</string>
+    <string name="no_accaunt">Еще нет каккунта? Зарегистрируйтесь</string>
+</resources>
