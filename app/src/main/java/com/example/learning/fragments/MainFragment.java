@@ -2,11 +2,11 @@ package com.example.learning.fragments;
 
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.learning.R;
 import com.example.learning.activities.MainActivity;
@@ -19,14 +19,14 @@ public class MainFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
 
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
         activity = (MainActivity) getActivity();
 
         BottomNavigationView navigationView = view.findViewById(R.id.nav_view);
 
         navigationView.setOnNavigationItemSelectedListener(item -> {
-            activity.loadFragment(activity.whichFragment(R.id.navigation_home));
+            activity.loadFragment(activity.whichFragment(item.getItemId()));
             return true;
         });
 

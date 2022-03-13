@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_background"
     android:paddingHorizontal="24dp"
+    android:id="@+id/fragment_login"
     tools:context=".fragments.LoginFragment">
 
     <ImageView
@@ -18,6 +19,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:id="@+id/sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -34,7 +36,6 @@
         android:layout_marginBottom="12dp"
         android:backgroundTint="#BEC2C2"
         android:hint="Email"
-        android:text="junior@wsr.ru"
         android:inputType="textEmailAddress"
         android:textColor="#BEC2C2"
         android:textColorHint="#BEC2C2"
@@ -50,7 +51,6 @@
         android:backgroundTint="#BEC2C2"
         android:hint="Пароль"
         android:textColor="#BEC2C2"
-        android:text="junior"
         android:inputType="textPassword"
         android:textColorHint="#BEC2C2"
         app:layout_constraintEnd_toEndOf="parent"

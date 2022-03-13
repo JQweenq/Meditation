@@ -18,6 +18,9 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#253334"
+        app:labelVisibilityMode="unlabeled"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@drawable/navigation_item_states"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 

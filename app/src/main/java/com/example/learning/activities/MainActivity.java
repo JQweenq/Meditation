@@ -2,12 +2,10 @@ package com.example.learning.activities;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 
+import com.example.learning.fragments.NavigationFragment;
+import com.example.learning.fragments.ProfileFragment;
 import com.example.learning.cummon.CummonExtendedActivity;
-import com.example.learning.data.remotly.ApiRequest;
-import com.example.learning.data.remotly.FeelingsResponse;
-import com.example.learning.data.remotly.QuotesResponse;
 import com.example.learning.fragments.BoardingFragment;
 import com.example.learning.fragments.HomeFragment;
 import com.example.learning.R;
@@ -19,9 +17,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -52,37 +47,46 @@ public class MainActivity extends CummonExtendedActivity {
         loadFullFragment(whichFullFragment(R.layout.fragment_boarding));
     }
 
-    public Fragment whichFragment(int id){
-        switch (id){
-            default:{
+    @SuppressLint("NonConstantResourceId")
+    public Fragment whichFragment(int id) {
+        switch (id) {
+            case R.layout.fragment_navigation:
+            case R.id.navigation_navigation: {
+                return new NavigationFragment();
+            }
+            case R.layout.fragment_profile:
+            case R.id.navigation_profile: {
+                return new ProfileFragment();
+            }
+            default: {
                 return new HomeFragment();
             }
         }
     }
 
     @SuppressLint("NonConstantResourceId")
-    public Fragment whichFullFragment(int id){
-        switch (id){
+    public Fragment whichFullFragment(int id) {
+        switch (id) {
             case R.layout.fragment_login: {
                 return new LoginFragment();
             }
             case R.layout.fragment_main: {
                 return new MainFragment();
             }
-            default:{
+            default: {
                 return new BoardingFragment();
             }
         }
     }
 
-    public void loadFragment(Fragment fragment){
+    public void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
 
-    public void loadFullFragment(Fragment fragment){
+    public void loadFullFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.full_frame, fragment);
         if (!(fragment instanceof BoardingFragment)) {

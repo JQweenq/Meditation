@@ -5,9 +5,9 @@ import java.util.List;
 public class FeelingsResponse {
 
     public boolean success;
-    public List<DataEntry> data;
+    public List<FeelingsDataEntry> data;
 
-    private class DataEntry{
+    public class FeelingsDataEntry {
         public int id;
         public String title;
         public String image;
